@@ -130,10 +130,14 @@ def load(saver, sess, logdir):
                           .split('-')[-1])
         print("  Global step was: {}".format(global_step))
         print("  Restoring...", end="")
+
         saver.restore(sess, ckpt.model_checkpoint_path)
         print(" Done.")
         return global_step
     else:
+        # new_saver = tf.train.import_meta_graph(
+        #     './logdir/train/2017-02-14T17-37-43/model.ckpt-4350.meta')
+        # new_saver.restore(sess, './logdir/train/2017-02-14T17-37-43/model.ckpt-4350')
         print(" No checkpoint found.")
         return None
 

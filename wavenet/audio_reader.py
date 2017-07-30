@@ -8,7 +8,7 @@ import librosa
 import numpy as np
 import tensorflow as tf
 
-FILE_PATTERN = r'p([0-9]+)_([0-9]+)\.aif'
+FILE_PATTERN = r'p([0-9]+)_([0-9]+)\.aiff'
 
 
 def get_category_cardinality(files):
@@ -32,7 +32,7 @@ def randomize_files(files):
         yield files[file_index]
 
 
-def find_files(directory, pattern='*.aif'):
+def find_files(directory, pattern='*.aiff'):
     '''Recursively finds all files matching the pattern.'''
     files = []
     for root, dirnames, filenames in os.walk(directory):
